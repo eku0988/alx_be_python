@@ -1,12 +1,15 @@
+# bank_account.py
+
 class BankAccount:
     def __init__(self, initial_balance=0):
-        # Initialize the account balance
         self.__account_balance = initial_balance
 
     def deposit(self, amount):
         """Add the specified amount to the account balance."""
         if amount > 0:
             self.__account_balance += amount
+            # Return the deposited amount for display in main-0.py
+            return amount
 
     def withdraw(self, amount):
         """Withdraw the specified amount if sufficient funds exist."""
@@ -17,5 +20,5 @@ class BankAccount:
             return False
 
     def display_balance(self):
-    """Display the current account balance with two decimal places."""
-    print(f"Current Balance: ${self.__account_balance:.2f}")
+        """Display the current account balance with two decimal places."""
+        print(f"Current Balance: ${self.__account_balance:.2f}")
